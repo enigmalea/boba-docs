@@ -1,6 +1,8 @@
 const path = require("path");
 const excalidrawMdxPlugin = require("excalidraw-mdx-plugin/plugin");
 const excalidrawMdxRemark = require("excalidraw-mdx-plugin");
+const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
+const darkCodeTheme = require("prism-react-renderer/themes/palenight");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -32,6 +34,10 @@ module.exports = {
   ],
   clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
     respectPrefersColorScheme: true,
     image: "img/preview.png",
     navbar: {
